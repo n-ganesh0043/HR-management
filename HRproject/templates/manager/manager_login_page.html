@@ -1,0 +1,59 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+<link rel="stylesheet" href="{% static 'm1/m1.css' %}">
+  </head>
+  <body>
+  <br>
+  <table align="center"><tr>
+      <th><img src="{% static 'images/hr logo.png' %}" width="100" height="100"> </th><br>
+      <th>
+  <h1 align="center" style="font-family: Algerian;color:deeppink">HR OPERATION MANAGEMENT</h1>
+          </th>
+  </tr></table>
+  <marquee><h3 style="font-family: Algerian;color: lime"> YOUR LIFE IN YOUR HANDS!!!!!!!!!!!!!!!!!</h3></marquee>
+
+  {% include 'index_menu.html' %}
+  <br>
+  <br>
+  <form action="{% url 'manager_home_page' %}" method="post">
+      {% csrf_token %}
+      <h1 align="center" style="font-family: Arial;color: green;text-shadow: 5px 5px 5px blanchedalmond">MANAGER LOGIN PAGE</h1>
+  <table align="center" border="0">
+      <tr>
+          <th>USERNAME</th>
+          <th><input type="text" placeholder="enter your name" required name="bt3"></th>
+      </tr>
+      <tr>
+          <th>PASSWORD</th>
+          <th><input type="password" placeholder="*********" required name="bt4"></th>
+      </tr>
+      <tr>
+          <br>
+          <th colspan="3" style="text-align: center">
+              <br><button type="submit" class="btn btn-outline-warning">LOGIN</button></th>
+      </tr>
+      <th colspan="2">
+        {% if message %}
+        <h6 style="font-family: 'Arial Black';text-align: center" >{{ message }}</h6>
+    {% endif %}
+    </th>
+        </tr>
+  </table>
+  </form>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

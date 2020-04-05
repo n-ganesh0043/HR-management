@@ -1,0 +1,87 @@
+<!doctype html>
+{% load static%}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'm1/m1.css' %}">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <br>
+  <table align="center"><tr>
+      <th><img src="{% static 'images/hr logo.png' %}" width="100" height="100"> </th><br>
+      <th>
+  <h1 align="center" style="font-family: Algerian;color:deeppink">HR OPERATION MANAGEMENT</h1>
+          </th>
+  </tr></table>
+  <marquee><h3 style="font-family: Algerian;color: lime"> YOUR LIFE IN YOUR HANDS!!!!!!!!!!!!!!!!!</h3></marquee>
+  <br>
+
+    <nav class="navbar navbar-dark bg-primary">
+  <img src="{% static 'images/mngr logo.png' %}" width="50" height="50">
+    <a class="navbar-brand" href="{% url 'add_recruitment_details' %}"><font style="font-family: Algerian;color: red;background-color: white">NEW RECRUITMENT DETIALS</font></a>
+    <a class="navbar-brand" href="{% url 'recruitment_modifing_page' %}"><font style="font-family: Algerian;color: red;background-color: white"> MODIFYING RECRUITMENT DETAILS</font></a>
+        <a class="navbar-brand" href="{% url 'delete' %}"><font style="font-family: Algerian;color: red;background-color: white"> DELETING RECRUITMENT DETAILS</font></a>
+        <a href="{% url 'recruiment' %}"><button type="submit" class="btn btn-danger">BACK</button></a>
+</nav>
+    <form method="post">
+        {% csrf_token %}
+        <h1 align="center" style="font-family: Arial">RECRUITMENT DETAILS</h1>
+    <table align="center" border="0">
+        <tr>
+            <th style="font-family: Algerian">OPPRTUNITY CODE:</th>
+            <th>{{ object.o_code }}</th>
+        </tr>
+        <tr>
+            <th style="font-family: Algerian">QUALIFICATION:</th>
+            <th>{{ object.qualification }}</th>
+        </tr>
+        <tr>
+            <th style="font-family: Algerian"> REGISTRATION-START-FROM:</th>
+            <th>{{ object.registration_start_from }}</th>
+        </tr>
+        <tr>
+            <th style="font-family: Algerian">AGE-LIMIT:</th>
+            <th>{{ object.age_limit }}</th>
+        </tr>
+        <tr>
+            <th style="font-family: Algerian">LASTDATE-TO-APPLY</th>
+            <th>{{ object.lastdate_to_apply }}</th>
+        </tr>
+        <tr>
+            <th style="font-family: Algerian">DEPARTMENT-ID:</th>
+            <th>{{ object.department_id }}</th>
+        </tr>
+        <tr>
+            <th style="font-family: Algerian">NO.OF.POSITIONS:</th>
+            <th>{{ object.no_of_position }}</th>
+        </tr>
+        <tr>
+            <th style="font-family: Algerian">DESCRIPTION</th>
+            <th>{{ object.description }}</th>
+        </tr>
+        <tr>
+            <th style="font-family: Algerian">RESPONSIBILITIES</th>
+            <th>{{ object.responsibilities }}</th>
+        </tr>
+        <tr>
+            <th style="font-family: Algerian">CONTACTNO</th>
+            <th>{{ object.contactno }}</th>
+        </tr>
+        <tr>
+            <th colspan="3" style="text-align: center"><button type="submit">DELETE</button> </th>
+        </tr>
+    </table>
+    </form>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
